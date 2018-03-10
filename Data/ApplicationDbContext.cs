@@ -15,6 +15,7 @@ namespace dotnet_eventRegistration.Data
         {
         }
 
+        public DbSet<Student> Students { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
