@@ -35,7 +35,7 @@ namespace dotnet_eventRegistration
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddScoped<IStudentService, StudentService>();
             services.AddMvc();
         }
 
