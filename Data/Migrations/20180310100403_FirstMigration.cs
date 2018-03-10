@@ -21,19 +21,19 @@ namespace dotnet_eventRegistration.Data.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles");
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
-                table: "AspNetUserClaims",
-                nullable: false,
-                oldClrType: typeof(int))
-                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            // migrationBuilder.AlterColumn<int>(
+            //     name: "Id",
+            //     table: "AspNetUserClaims",
+            //     nullable: false,
+            //     oldClrType: typeof(int))
+            //     .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
-                table: "AspNetRoleClaims",
-                nullable: false,
-                oldClrType: typeof(int))
-                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            // migrationBuilder.AlterColumn<int>(
+            //     name: "Id",
+            //     table: "AspNetRoleClaims",
+            //     nullable: false,
+            //     oldClrType: typeof(int))
+            //     .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.CreateTable(
                 name: "Students",
@@ -94,19 +94,19 @@ namespace dotnet_eventRegistration.Data.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles");
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
-                table: "AspNetUserClaims",
-                nullable: false,
-                oldClrType: typeof(int))
-                .OldAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            // migrationBuilder.AlterColumn<int>(
+            //     name: "Id",
+            //     table: "AspNetUserClaims",
+            //     nullable: false,
+            //     oldClrType: typeof(int))
+            //     .OldAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
-                table: "AspNetRoleClaims",
-                nullable: false,
-                oldClrType: typeof(int))
-                .OldAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            // migrationBuilder.AlterColumn<int>(
+            //     name: "Id",
+            //     table: "AspNetRoleClaims",
+            //     nullable: false,
+            //     oldClrType: typeof(int))
+            //     .OldAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
