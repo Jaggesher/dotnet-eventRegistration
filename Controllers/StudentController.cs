@@ -50,7 +50,12 @@ namespace dotnet_eventRegistration.Controllers
             {
                 AllStudent = model
             };
-            return Json(Data);
+            return View(Data);
+        }
+
+        public IActionResult ShowIt(Guid StudentId)
+        {
+            return Json(StudentId);
         }
     }
 }

@@ -1,0 +1,53 @@
+@model AllStudentViewModel
+@{
+    ViewData["Title"] = "All Student";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <br>
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">All Student.</div>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach( var student in Model.AllStudent )
+                        {
+                            <tr>
+                                <td>@student.RollNo</td>
+                                <td>@student.Name</td>
+                                <td>@student.Email</td>
+                                <td>@student.Address</td>
+                                <td>
+
+                                    <form asp-controller="Student" asp-action="ShowIt"  method="post">
+                                        <button type="submit" class="btn btn-success btn-sm" value="@student.Id" name="StudentId" data-toggle="tooltip" data-placement="bottom" title="ViewIt!">
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                        </button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    
+}
