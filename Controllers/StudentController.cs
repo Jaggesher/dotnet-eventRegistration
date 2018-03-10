@@ -43,11 +43,14 @@ namespace dotnet_eventRegistration.Controllers
 
         [Authorize]
         [HttpGet]
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
-            var model = _studentService.getAll();
-            
-            return Json(model);
+            var model = await _studentService.getAll();
+            AllStudentViewModel Data = new AllStudentViewModel()
+            {
+                AllStudent = model
+            };
+            return Json(Data);
         }
     }
 }

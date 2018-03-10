@@ -7,6 +7,6 @@ namespace dotnet_eventRegistration.Models
 {
     public class AllStudentViewModel
     {
-        public ICollection<Student> AllStudent { get; set; }
+        public IEnumerable<Student> AllStudent { get; set; }
     }
 }

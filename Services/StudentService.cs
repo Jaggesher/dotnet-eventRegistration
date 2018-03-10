@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using dotnet_eventRegistration.Models;
 using dotnet_eventRegistration.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_eventRegistration.Services
 {
@@ -30,7 +31,7 @@ namespace dotnet_eventRegistration.Services
                 EduQualification = student.EduQualification
             };
 
-            _context.Add(newStudent);
+            _context.Students.Add(newStudent);
 
             var result = await _context.SaveChangesAsync();
 
@@ -40,7 +41,7 @@ namespace dotnet_eventRegistration.Services
 
         public async Task<IEnumerable<Student>> getAll()
         {
-            return _context.Students.ToList();
+            return await _context.Students.ToArrayAsync();
 
         }
     }
