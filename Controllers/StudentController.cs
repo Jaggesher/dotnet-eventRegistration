@@ -20,6 +20,7 @@ namespace dotnet_eventRegistration.Controllers
         }
 
         // GET: /<controller>/
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -27,11 +28,11 @@ namespace dotnet_eventRegistration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddStudent(StudentViewModel student )
+        public async Task<IActionResult> Index(StudentViewModel student )
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+               return View(student);
             }
 
             var result = await _studentService.addStudent(student);

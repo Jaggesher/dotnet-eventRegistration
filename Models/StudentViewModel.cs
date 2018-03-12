@@ -28,6 +28,7 @@ namespace dotnet_eventRegistration.Models
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Date Of Birth")]
+        [AgeCalculate]
         public DateTime BirthDate { get; set; }
 
         [Required]
