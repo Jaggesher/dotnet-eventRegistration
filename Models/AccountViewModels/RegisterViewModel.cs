@@ -9,6 +9,11 @@ namespace dotnet_eventRegistration.Models.AccountViewModels
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(50, ErrorMessage = "The {0} at most {1} characters long.")]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
