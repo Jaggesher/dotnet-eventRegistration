@@ -10,6 +10,7 @@ namespace dotnet_eventRegistration.Services
     {
         Task<bool>addStudent(StudentViewModel student);
         Task<IEnumerable<Student>> getAll();
+        Task<Student> GetStudent(Guid studentID);
 
      }
 }

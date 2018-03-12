@@ -12,6 +12,7 @@ namespace dotnet_eventRegistration.Models
 
         [Required]
         [StringLength(15)]
+        [Display(Name = "Student ID")]
         public String RollNo { get; set; }
 
         [Required]
@@ -20,10 +21,12 @@ namespace dotnet_eventRegistration.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name ="Fathers Name")]
         public String FathersName { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
+        [Display(Name = "Date Of Birth")]
         public DateTime BirthDate { get; set; }
 
         [Required]
@@ -38,6 +41,7 @@ namespace dotnet_eventRegistration.Models
         public string Address { get; set; }
 
         [Required]
+        [Display(Name = "Education")]
         public string EduQualification { get; set; }
        
     }

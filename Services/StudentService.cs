@@ -44,5 +44,10 @@ namespace dotnet_eventRegistration.Services
             return await _context.Students.ToArrayAsync();
 
         }
+
+        public async Task<Student> GetStudent(Guid studentID)
+        {
+            return await _context.Students.Where(X => X.Id == studentID).SingleAsync();
+        }
     }
 }

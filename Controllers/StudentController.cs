@@ -26,6 +26,7 @@ namespace dotnet_eventRegistration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddStudent(StudentViewModel student )
         {
             if (!ModelState.IsValid)
@@ -53,9 +54,10 @@ namespace dotnet_eventRegistration.Controllers
             return View(Data);
         }
 
-        public IActionResult ShowIt(Guid StudentId)
+        public async Task<IActionResult> Show(Guid StudentId)
         {
-            return Json(StudentId);
+            Student model = await _studentService.GetStudent(StudentId);
+            return View(model);
         }
     }
 }
