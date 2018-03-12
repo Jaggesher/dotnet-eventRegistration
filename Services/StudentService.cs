@@ -16,7 +16,7 @@ namespace dotnet_eventRegistration.Services
             _context = context;
         }
 
-        public async Task<bool> addStudent(StudentViewModel student)
+        public async Task<String> addStudent(StudentViewModel student)
         {
             var newStudent = new Student
             {
@@ -34,8 +34,11 @@ namespace dotnet_eventRegistration.Services
             _context.Students.Add(newStudent);
 
             var result = await _context.SaveChangesAsync();
+            String Id= newStudent.Id.ToString();
 
-            return result == 1 ;
+            if(result == 1) return Id;
+            
+            return null;
 
         }
 

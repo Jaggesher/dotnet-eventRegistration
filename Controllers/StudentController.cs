@@ -14,9 +14,11 @@ namespace dotnet_eventRegistration.Controllers
     public class StudentController : Controller
     {
         private readonly IStudentService _studentService;
-        public StudentController(IStudentService studentService)
+         private readonly IEmailSender _emailSender;
+        public StudentController(IStudentService studentService, IEmailSender emailSender)
         {
             _studentService = studentService;
+            _emailSender = emailSender;
         }
 
         // GET: /<controller>/
@@ -35,8 +37,15 @@ namespace dotnet_eventRegistration.Controllers
                return View(student);
             }
 
-            var result = await _studentService.addStudent(student);
-            if (result) return Redirect("Index");
+            String result = await _studentService.addStudent(student);
+
+            if (result != null){
+
+                await _emailSender.SendEmailAsync(student.Email, "Your Code", "Your Unique Token IS : " + result);
+
+                return RedirectToAction(nameof(Index));
+
+            }
 
             return BadRequest(new { error = "Could not register" });
 

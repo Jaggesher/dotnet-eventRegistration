@@ -8,7 +8,7 @@ namespace dotnet_eventRegistration.Services
 {
     public interface IStudentService
     {
-        Task<bool>addStudent(StudentViewModel student);
+        Task<String>addStudent(StudentViewModel student);
         Task<IEnumerable<Student>> getAll();
         Task<Student> GetStudent(Guid studentID);
 
